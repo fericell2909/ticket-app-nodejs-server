@@ -22,8 +22,16 @@ class Sockets {
                 callback(this.ticketlist.crearTickcet())
             })
             
+
+            socket.on('siguiente-ticket-trabajar', ({agente, escritorio},callback) => {
+                // console.log('nuevo ticket backend');
+                callback(this.ticketlist.asignarTicket(agente,escritorio))
+            })
         
         });
+
+
+        
     }
 
 
