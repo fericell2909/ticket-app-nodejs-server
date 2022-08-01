@@ -15,7 +15,7 @@ class TicketList {
     }
 
     crearTickcet() {
-        const nuevoTicket = new Ticket(this.siguienteNumero());
+        const nuevoTicket = new Ticket(this.siguienteNumero);
         this.pendientes.push(nuevoTicket);
         return nuevoTicket;
     }
@@ -32,7 +32,7 @@ class TicketList {
         this.asignados.unshift(siguienteTicket);
 
         return siguienteTicket;
-        
+
     }
 
 }
