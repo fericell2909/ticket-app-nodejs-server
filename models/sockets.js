@@ -23,9 +23,11 @@ class Sockets {
             })
             
 
-            socket.on('siguiente-ticket-trabajar', ({agente, escritorio},callback) => {
+            socket.on('siguiente-ticket-trabajar', ({ usuario },callback) => {
                 // console.log('nuevo ticket backend');
-                callback(this.ticketlist.asignarTicket(agente,escritorio))
+                console.log(usuario);
+                callback(this.ticketlist.asignarTicket(usuario.agente,usuario.escritorio))
+                this.io.emit('tickets-asignado', this.ticketlist.ultimos13);
             })
         
         });
